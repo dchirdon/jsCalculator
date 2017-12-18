@@ -4,7 +4,7 @@ $('document').ready(function() {
 
 var num1 = 0;
 var num2 = 0;
-var mathDisplay = "";
+var mathDisplay = 0;
 
 // [ ]: The calculator can perform the following operations (i.e. is a working calculator:
 // * addition
@@ -27,7 +27,7 @@ function mathOperations(mathDisplay, num1, num2) {
       return num1*num2;
       break;
     default:
-      return "";
+      return 0;
   }
 }
 
@@ -36,10 +36,10 @@ function mathOperations(mathDisplay, num1, num2) {
 
 function clearCalc() {
   $('#clear').click(function() {
-    $('#display').text("");
+    $('#display').text("0");
     var num1 = 0;
     var num2 = 0;
-    var mathDisplay = "";
+    var mathDisplay = 0;
   });
 }
 
@@ -67,6 +67,7 @@ function runCalculator() {
   $('.number').each(function() {
     $(this).click(function(e) {
       $('#display').text($('#display').text()+$(this).attr("id"));
+
       return e;
     });
   });
