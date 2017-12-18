@@ -12,7 +12,7 @@ var mathDisplay = "";
 // * division
 // * multiplication
 
-function mathOperations(num1, mathDisplay, num2) {
+function mathOperations(mathDisplay, num1, num2) {
   switch (mathDisplay) {
     case "+":
       return num1+num2;
@@ -52,7 +52,7 @@ function runCalculator() {
       if($(this).text() === "=") {
 
         num2=parseFloat($('#display').text());
-        $('#display').text(mathOperations(num1, mathDisplay, num2));
+        $('#display').text(mathOperations(mathDisplay, num1, num2));
         num1=parseFloat($('#display').text());
 
       } else {
