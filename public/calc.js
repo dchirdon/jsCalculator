@@ -66,7 +66,7 @@ function runCalculator() {
 
   $('.number').each(function() {
     $(this).click(function(e) {
-      $('#display').text($('#display').text() + $(this).attr("id"));
+      $('#display').text($('#display').text()+$(this).attr("id"));
       return e;
     });
   });
