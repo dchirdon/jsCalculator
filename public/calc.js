@@ -2,10 +2,6 @@ $('document').ready(function() {
   runCalculator();
 });
 
-var num1 = 0;
-var num2 = 0;
-var mathDisplay = 0;
-
 // [ ]: The calculator can perform the following operations (i.e. is a working calculator:
 // * addition
 // * subtraction
@@ -37,9 +33,6 @@ function mathOperations(mathDisplay, num1, num2) {
 function clearCalc() {
   $('#clear').click(function() {
     $('#display').text("0");
-    var num1 = 0;
-    var num2 = 0;
-    var mathDisplay = 0;
   });
 }
 
@@ -50,13 +43,12 @@ function runCalculator() {
     $(this).click(function(e) {
 
       if($(this).text() === "=") {
-
         num2=parseFloat($('#display').text());
         $('#display').text(mathOperations(mathDisplay, num1, num2));
         num1=parseFloat($('#display').text());
 
       } else {
-      mathDisplay = $(this).text();
+        mathDisplay = $(this).text();
         num1= parseFloat($('#display').text());
         $('#display').text("");
       }
@@ -66,8 +58,7 @@ function runCalculator() {
 
   $('.number').each(function() {
     $(this).click(function(e) {
-      $('#display').text($('#display').text()+$(this).attr("id"));
-
+      $('#display').text($('#display').text()+$(this).attr("id"))
       return e;
     });
   });
